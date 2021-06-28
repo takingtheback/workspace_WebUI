@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+/* form 양식 css : css/common_form.css */
+
+div.main_title {
+
+	color: #004C98;
+	text-align: center;
+	font-family: "Times New Roman";
+	font-size: 25px;
+	text-decoration: none;
+}
+
+div.input_location {
+	text-align:center;
+}
+
+input.input_box {
+	width : 300px;
+	height : 40px;
+	margin: 5px;
+	text-align: center;
+}
+
+input.btn_submit {
+	background-color : #004C98;
+	color: white;
+	width : 310px;
+	height : 40px;
+	margin: 5px;
+	text-align:center;
+	
+}
+
+input.reset {
+	background-color : gray;
+	color: #fff;
+	border-radius: 10px;
+	width : 50px;
+	height : 25px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus { 
+	background-color: #FFFFCC;
+	}
+
+
+span.input_label {
+	display: inline-block;
+	width : 80px;
+	
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+	color:gray;
+}
+
+a:hover {
+	text-decoration: none;
+	background-color: #004C98;
+	color: white;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+a.bold {
+	font-weight: bold;
+}
+	
+div.top_menu {
+	text-align: center;
+
+}	
+span.seperator {
+	margin: 0 5px;
+	font-size: 0.7em;
+}

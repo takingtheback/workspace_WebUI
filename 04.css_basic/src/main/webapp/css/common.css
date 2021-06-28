@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* common.css : 공통 */
+
+/* ul,ol 아이템 목록 */
+ul.menu_item_1, ol.menu_item_1 {
+	list-style: none;
+	margin-bottom: 0;
+	padding: 0;
+	
+} 
+
+/* ul li,ol li 설정 : #efefef */
+ul.menu_item_1 li, ol.menu_item_1 li {
+	margin-bottom: 5 px;
+	padding: 5px 0 5px 5px;
+	border-bottom: dotted 1px #efefef;
+	font-size: 12px;
+
+}
+
+
+/* ul li,ol li 맨마지막 li 항목 밑줄 제거 설정 */
+ul.menu_item_1 li:last-child, ol.menu_item_1 li:last-child {
+	border-bottom: 0px;
+	
+}
+
+/* ul li,ol li 항목 앞에 > 아이콘으로 사용 */
+ul.menu_item_1 li:before, ol.menu_item_1 li:before {
+	content: "> ";
+	display: inline-block;
+	vertical-align:middle;
+	padding:0 5px 6px 0;
+	
+}
+
+
+ul.menu_item_2, ol.menu_item_2 {
+	list-style: none;
+	margin-bottom: 0;
+	padding: 0;
+	
+} 
+
+/* ul li,ol li 설정 : #efefef */
+ul.menu_item_2 li, ol.menu_item_2 li {
+	display:inline; /* float: left; */
+	font-size: 12px;
+	margin-right:5px;
+	border: solid 1px #efefef;
+	padding: 5px;
+	background-color: #004C98;
+	color: white;
+
+}   
+
+/* ul li,ol li 항목 앞에 > 아이콘으로 사용 */
+ul.menu_item_2 li:before, ol.menu_item_2 li:before {
+	content: "> ";
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0 5px 6px 0;
+	
+}
+

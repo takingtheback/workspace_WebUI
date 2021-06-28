@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+		<title>아이디찾기 | MMS</title>
+		<!-- css : external -->
+		<link type="text/css" rel="stylesheet" href="css/common_form.css">
+	</head>
+	
+	<body>
+		<div class="main_title">
+		<h3>회원관리시스템</h3>
+		</div>
+		
+		<div class="top_menu">
+			<a href="index.html">MMS</a><span class="seperator">|</span>
+			<a href="login.html">로그인</a><span class="seperator">|</span>
+			<a href="joinMember.html">회원가입</a><span class="seperator">|</span>
+			<a href="findMemberId.html">아이디</a><span class="seperator">/</span>
+			<a href="findMemberPw.html">비밀번호찾기</a>
+		</div>
+		
+		<h3>아이디찾기</h3>
+	
+		<form action="findMemberIdResult.html" method="post">
+			<div>
+			<span class= "input_label">이름</span>
+			<input type="text" name="name">
+			</div>
+			<div>
+			<span class= "input_label">이메일</span>
+			<input type="text" name="email">
+			</div>
+			<div>
+			<input type="submit" value="아이디 찾기" class="btn_submit">
+			<input type="reset" value="취소" class="reset">
+			</div>
+		</form>
+		
+	</body>
+</html>
