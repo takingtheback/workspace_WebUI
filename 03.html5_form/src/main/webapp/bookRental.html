@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>도서대여예약</title>
+</head>
+<!--
+아이디 : 영문대소문자숫자조합, 최소6자리, 최대30자리
+휴대폰 : 010-0000-0000
+이메일 : 000@0000.000
+도서명 : 
+예약권수 : 최소1권 최대 5권
+예약 희망날자 : 현재날짜 기본
+도서 수령시간 : (09시 ~ 17시 사이)
+-->
+<body>
+<table border="0" >
+<form action="#" method="post">
+<FIELDSET>
+<LEGEND><B>회원정보</B></LEGEND>
+	<input type="text" name="memberId" 
+		autofocus="autofocus"
+		required="required"
+		placeholder="아이디 : 영문대소문자숫자조합 6~30자리이내"
+		pattern="[0-9a-zA-Z]{6,30}"
+		style="width:300px;"><br>
+	
+	<input type="mobile" name="mobile"
+		required="required"
+		placeholder="휴대폰 : 다음형식으로 입력(010-0000-0000)"
+		pattern="(010)-\d{3,4}-\d{4}"
+		style="width:300px;"><br>
+	
+	<input type="text" name="email"
+		required="required"
+		placeholder="이메일 : 다음형식으로 입력(000@0000.000)"
+		pattern=" /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/"
+		style="width:300px;">
+</FIELDSET><BR>
+
+<FIELDSET>
+<LEGEND><B>대여정보</B></LEGEND>
+	<input type="text" name="bookTitle" 
+		autofocus="autofocus"
+		required="required"
+		placeholder="도서명"
+		style="width:300px;"><br>
+	예약권수(최소1권 최대 5권)<br>
+	<input type="number" name="countBooks"
+		required="required"
+		placeholder="최소1권 최대 5권"
+		min="1" max="5" step="1" value="1"
+		style="width:300px;"><br>
+	예약희망날짜<br>
+	<input placeholder="예약희망날짜"
+				type="date" name="reservationDate"
+				required="required"
+				value="2021-06-24"
+				style="width:300px;"><br>
+	도서수령시간(09시 ~ 17시 사이)<br>			
+	<input placeholder="도서수령시간"
+				type="time" name="reservationTime"
+				required="required"
+				value="09:00"
+				min="09:00" max="17:00"
+				style="width:300px;"><br>			
+</FIELDSET><BR>		
+<tr>
+	<td colspan="5" align="center">
+	<input type="submit" value="예약">
+	<input type="reset" value="취소">
+	</td>
+</tr>
+		
+</body>
+</html>

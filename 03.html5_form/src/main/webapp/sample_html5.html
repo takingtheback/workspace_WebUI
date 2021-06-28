@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 FROM 예제</title>
+</head>
+<body>
+<h3>회원가입</h3>
+		<table border="0" >
+		<form action="joinMemberResult.html" method="post">
+		
+			<!--아이디 규칙: 영문대소문자숫자조합+특수문자@ 최소6자리 최대 30자리 -->
+		<FIELDSET>
+		<LEGEND><B>로그인정보</B></LEGEND>
+			
+			<input type="text" name="memberId" 
+				autofocus="autofocus"
+				required="required"
+				placeholder="아이디 : 영문자숫자2~15자리이내"
+				pattern="[0-9a-zA-Z]{6,30}*@[0-9a-zA-Z]{2,15}.[a-zA-Z]{2,3}"
+				style="width:250px;"><br>
+			
+			<input type="password" name="memberPw"
+				required="required"
+				placeholder="비밀번호 : 영문자숫자4~15자리이내"
+				style="width:250px;"><br>
+			
+			<input type="password" name="memberPwConfirm"
+				required="required"
+				placeholder="동일한 비밀번호 입력"
+				style="width:250px;">
+		
+		</FIELDSET><BR>
+		
+		<FIELDSET>
+		<LEGEND><B>회원정보</B></LEGEND>
+			
+			<input type="text" name="name"
+				placeholder="이름"
+				required="required"
+				style="width:250px;"><br>
+			
+			<input type="mobile" name="mobile"
+				required="required"
+				placeholder="휴대폰 : 다음형식으로 입력(010-1234-5678)"
+				pattern="(010|02|031|051)-\d{3,4}-\d{4}"
+				style="width:250px;"><br>
+			
+			<input type="text" name="email"
+				required="required"
+				placeholder="이메일 : 다음형식으로 입력(****@****.com)"
+				style="width:250px;">
+		
+		</FIELDSET><BR>
+		<FIELDSET style="width:150; text-align:left; padding:5">
+		<LEGEND><B>테스트</B></LEGEND>
+			테스트 : 날짜
+			<input placeholder="생년월일(날짜)"
+				type="month" name="birth"
+				required="required"
+				value="2021-05"
+				style="width:250px;"><br>
+			테스트 : 숫자
+			<input placeholder="숫자"	 type="number" name="birth"
+				required="required"
+				min="2" max="10" step="2" value="2"
+				style="width:250px;"><br>
+			테스트 : 파일
+			<input placeholder="파일"	 type="file" name="file"
+				min="2" max="10" step="2" value="2"
+				style="width:250px;"><br>
+			테스트 : 다중 파일
+			<input placeholder="파일"	 type="file" name="file"
+				multiple="multiple"
+				min="2" max="10" step="2" value="2"
+				style="width:250px;">
+		</FIELDSET><BR>
+		<tr>
+			<td colspan="5" align="center">
+			<input type="submit" value="회원가입">
+			<input type="reset" value="취소">
+			</td>
+		</tr>
+		</form>
+		</table>		
+</form>
+</body>
+</html>
