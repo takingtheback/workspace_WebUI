@@ -6,10 +6,41 @@
 <!-- js : 내부파일 -->
 <script type="text/javascript">
 	alert("안녕 자바스크립트!!!")
+	/* 본인의 정보를 변수 선언 및 값 저장 */
+	var name = "홍길동";
+	var age = 26;
+	var address ="서울시 영등포구";
+
+	/* 본인의 정보를 ul 태그를 이용해서 출력 */
+	document.write("<h3>내정보</h3>");
+	document.write("<li>이름 : "+ name + "</li>");
+	document.write("<li>나이 : "+ age + "</li>");
+	document.write("<li>주소 : "+ address + "</li>");
+	
+	/* 연산자 및 제어문 이용해서 1~ 10까지 출력 및 덧셈 누적 결과 출력*/
+	document.write();
+	var total = 0;
+	document.write("<ul>");
+	for(index = 1; index <= 10; index++) {
+		total += index;
+		document.write("<li>" + index + "</li>");
+	}
+	document.write("<ul>");
+	document.write("1~10 누적합계 : " + total);
 </script>
 </head>
 <body>
 <!-- 자바스크립트 -->
 <h3>Javascript Basic</h3>
+<!--  
+<h3>내정보</h3>
+<ul>
+	<li>이름 : 홍길동</li>
+	<li>나이 : 26</li>
+	<li>주소 : 서울시 영등포구</li>
+	
+</ul>
+ -->
+ 
 </body>
 </html>
