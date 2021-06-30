@@ -1,7 +1,7 @@
 /**
  * 공통 자바스크립스 파일 : js/common.js
  */
- alert("common.js load");
+ // alert("common.js load");
 /* 현재 날짜 년도4자리 -월2자리 -일2자리 기본형식의 날짜 반환 함수 
 	-- 1 ~ 9 : 01
 	-- getFullYear()
