@@ -7,6 +7,8 @@
 
 <script type="text/javascript">
 	/* 윈도우 로드 이벤트 처리 함수 */
+	
+	
 	window.onload = function(){
 		var takeElement = document.getElementById("title_1");
 		console.log(typeof(takeElement));
@@ -14,7 +16,7 @@
 		console.log("html>> ", html);
 		
 		// html 동적 변경
-		takeElement.innerHTML= "<h1 style='color:yellow; background-color:black;'> 화이팅!! </h1>"
+		takeElement.innerHTML= "<h1> 화이팅!! </h1>"
 		
 		// 아이디 입력항목 객체 가져오기
 		var memberIdElement = document.sampleForm.memberId;
@@ -38,15 +40,15 @@
 	
 
 	function titleVisibleRandomColor() {
-		alert('제목 랜덤 색상변경 보이기!')
+		// alert('제목 랜덤 색상변경 보이기!')
 		var takeTitleElement = document.getElementById("title_1");
-		var r1 = Math.floor(Math.random()*25) + 230;
-		var r2 = Math.floor(Math.random()*5) + 200;
-		var r3 = Math.floor(Math.random()*25) + 230;
-		style['background-color'] = 'rgba(' + r1 + ',' + r2 + ',' + r3 + ',0.7)';
-
+		var r1 = Math.floor(Math.random()*255);
+		var r2 = Math.floor(Math.random()*255);
+		var r3 = Math.floor(Math.random()*255);
+		var r4 = Math.floor(Math.random()*255);
 		
-		takeTitleElement.style.background-color = "rgba(" + r1 + "," + r2 + "," + r3 + ",0.7)";
+		takeTitleElement.style.color = "rgb(" + r3 + " " + r4 + " " + r1 + ")";
+		takeTitleElement.style.backgroundColor = "rgb(" + r1 + " " + r2 + " " + r3 + ")";
 	}
 	
 </script>
