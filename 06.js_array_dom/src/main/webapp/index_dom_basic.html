@@ -4,11 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>DOM API basic</title>
 <!-- js : internal -->
-<div>
-<input type="submit" value="제목 감추기">
-<input type="submit" value="제목 보이기">
-<input type="submit" value="제목 보이기 랜덤 색상변경">
-</div>
+
 <script type="text/javascript">
 	/* 윈도우 로드 이벤트 처리 함수 */
 	window.onload = function(){
@@ -27,13 +23,41 @@
 		memberIdElement.focus();
 	}
 	
+	function titleHidden() {
+		// alert('제목 감추기!')
+		// 제목 얼리먼트 객체 가져오기
+		var takeTitleElement = document.getElementById("title_1");
+		takeTitleElement.style.visibility = "hidden";
+	}
+
+	function titleVisible(){
+		// alert('제목 보이기!')
+		var takeTitleElement = document.getElementById("title_1");
+		takeTitleElement.style.visibility = "visible";
+	}
+	
+
+	function titleVisibleRandomColor() {
+		alert('제목 랜덤 색상변경 보이기!')
+		var takeTitleElement = document.getElementById("title_1");
+		var r1 = Math.floor(Math.random()*25) + 230;
+		var r2 = Math.floor(Math.random()*5) + 200;
+		var r3 = Math.floor(Math.random()*25) + 230;
+		style['background-color'] = 'rgba(' + r1 + ',' + r2 + ',' + r3 + ',0.7)';
+
+		
+		takeTitleElement.style.background-color = "rgba(" + r1 + "," + r2 + "," + r3 + ",0.7)";
+	}
+	
 </script>
 </head>
 <body>
-<button>제목 감추기</button>
-<form>
-	<input type="button" value="제목 감추기">
-<h3 id="title_1">DOM API basic</h3>
+
+<button onclick="titleHidden()">제목 감추기</button>
+<button onclick="titleVisible()">제목 보이기</button>
+<button onclick="titleVisibleRandomColor()">제목 랜덤 색상변경 보이기</button>
+
+<h3 id="title_1" >DOM API basic</h3>
 <form action="#" method="get" name="sampleForm" id="sampleForm">
 	<div>아이디 : <input type="text" name="memberId"></div>
 	<div>이름 : <input type="text" name="name"></div>
