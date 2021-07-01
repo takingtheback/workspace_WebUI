@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Javascript Form Valid</title>
+<!-- css : external -->
+<link type="text/css" rel="stylesheet" href="css/common_form.css">
+		
+<script type="text/javascript">
+	window.onload = function() {
+		initForm();
+	}
+	
+	/* 폼 초기화 함수 */
+	function initForm() {
+		// 폼양식 > 입력항목 이름
+		// document.joinForm.memberId.focus();
+	
+		// 폼양식 > 입력항목 id
+		document.getElementById("memberId").focus();
+	}
+	
+	/* reset button 이벤트 */
+	function clickReset() {
+		initForm();
+	}
+	
+	/* 입력양식 데이터 검증 이벤트 
+		1. 필수입력항목 : 아이디, 비밀번호, 비밀번호 확인
+			=> 입력항목객체.value
+	*/
+	function checkForm() {
+		// 아이디 입력 데이터 가져오기
+		var memberId = document.getElementById("memberId").value;
+		console.log("memberId : ", memberId);
+		// 비밀번호 입력 데이터 가져오기
+		var memberPw = document.joinForm.memberPw.value
+		console.log("memberPw : ", memberPw);
+		// 비밀번호 확인 입력 데이터 가져오기
+		var memberPwConfirm = document.getElementById("memberPwConfirm").value;
+		console.log("PwConfirm : ", memberPwConfirm);
+	
+		// 이 부분을 추가하면 action 으로 이동하지 않아서 console 확인 가능	
+		return false;
+		}
+	
+</script>		
+</head>
+
+<body>
+<div class="input_location">	
+<h3>JavaScript Form Valid</h3>
+</div>
+<!--  
+	## form 입력양식
+		-- 아이디 : 텍스트
+		-- 비밀번호 / 비밀번호 확인 : 비밀번호
+		-- 비밀번호 표시 : 체크박스
+		-- 이메일 : 이메일아이디/ 도메인주소/ 도메인선택
+		-- 관심분야 : 체크박스(항목 5개)
+		-- 자기소개 : textarea
+		
+		-- 확인전용버튼 : submit
+		-- 취소전용버튼 : reset
+ -->
+ 
+ <form action="result.html" method="post" name="joinForm" id="joinForm">
+	<div class="input_location">	
+	<input type="text" name="memberId" id="memberId"
+	placeholder="아이디" class="input_box">
+	</div>
+	<div class="input_location">
+	<input type="password" name="memberPw" id="memberPw"
+	placeholder="비밀번호" class="input_box">
+	</div>
+	<div class="input_location">
+	<input type="password" name="memberPwConfirm" id="memberPwConfirm"
+	placeholder="비밀번호 확인" class="input_box">
+	</div>
+	<div class="input_location">
+	<input type="checkbox" name="showMemberPw"> 비밀번호 보이기
+	</div>
+	<div class="input_location">
+	<input type="text" name="email1"
+	placeholder="이메일" class="input_email">@
+	<input type="text" name="email2"
+	placeholder="도메인주소" class="input_email">
+	<select name="mail">
+    <option value="">직접입력</option>
+    <option value="naver">naver.com</option>
+    <option value="gmail">gmail.com</option>
+	</select>
+	</div>
+	<div class="input_location">
+	관심분야<br>
+	<input type="checkbox" name="interestJava"> JAVA
+	<input type="checkbox" name="interestSql"> SQL
+	<input type="checkbox" name="interestHtml"> HTML
+	<input type="checkbox" name="interestCss"> CSS
+	<input type="checkbox" name="interestSpring"> SPRING
+	</div>
+	<div class="input_location">
+	자기소개<br>
+	<input type="text" name="memberId"
+	placeholder="자기소개" class="selfIntroduction">
+	
+	<div class="input_location">
+	<input type="submit" value="확인" class="btn_submit" onclick="return checkForm();">
+	</div>
+	<div class="input_location">
+	<input type="reset" value="취소" class="reset" onclick="clickReset()">
+	</div>
+	
+</form>
+</body>
+</html>
