@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function titleVisibleMobile() {
+	// alert('제목 감추기!')
+	// 제목 얼리먼트 객체 가져오기
+		var takeTitleElement = document.getElementById("title_2");
+		takeTitleElement.style.visibility = "hidden";
+		var takeTitleElement = document.getElementById("title_1");
+		takeTitleElement.style.visibility = "visible"; 
+		var takeTitleElement = document.getElementById("title_3");
+		takeTitleElement.style = "position:absolute; top:100px";
+		 var park = document.getElementsByName("btn2");
+		 for(var i = 0; park.length; i++) {
+	         if(park[i].checked) {
+	             park[i].checked = false;
+	         }
+		 }
+	}
+
+	function titleVisibleEmail() {
+		// alert('제목 보이기!')
+		var takeTitleElement = document.getElementById("title_1");
+		takeTitleElement.style.visibility = "hidden"; 
+		var takeTitleElement = document.getElementById("title_2");
+		takeTitleElement.style.visibility = "visible"; 
+		
+		var takeTitleElement = document.getElementById("title_3");
+		takeTitleElement.style = "position:absolute; top:30px";
+		var park = document.getElementsByName("btn1");
+		 for(var i = 0; park.length; i++) {
+	         if(park[i].checked) {
+	             park[i].checked = false;
+	         }
+		 }
+	}
+	
+	function handleInputOnkeyup()  {
+		  document.getElementById('btn2').click();
+		}
+
+</script>
+</head>
+<body>
+	<input type="radio" name="btn1" onclick="titleVisibleMobile()">회원정보에 등록한 휴대전화로 인증<br>
+	<div id="title_1">
+	
+	회원정보에 등록한 휴대전화 번호와 입력한 휴대전화 번호가 같아야, 인증번호를 받을 수 있습니다.	<br>
+	이름<input type="text" name="name"><br>
+	휴대전화<input type="text" name="mobile"><br>
+	</div>
+	
+	<div id = "title_3">
+	<input type="radio" name="btn2" onclick="titleVisibleEmail()">본인확인 이메일로 인증<br>
+	<div id="title_2">
+	
+	본인확인 이메일 주소와 입력한 이메일 주소가 같아야, 인증번호를 받을 수 있습니다.	<br>
+	이름<input type="text" name="name"><br>
+	이메일 주소<input type="text" name="email"><br>
+	</div>
+	</div>
+	
+	
+</body>
+</html>
