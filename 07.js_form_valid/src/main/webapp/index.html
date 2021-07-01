@@ -32,16 +32,100 @@
 	function checkForm() {
 		// 아이디 입력 데이터 가져오기
 		var memberId = document.getElementById("memberId").value;
-		console.log("memberId : ", memberId);
+		console.log("memberId : ", memberId.length);
+		
+		if(memberId == "" || memberId.trim().length == 0) {
+			document.getElementById("memberId").focus;
+			document.getElementById("memberIdMsg").innerHTML ="아이디를 입력하세요";
+			document.getElementById("memberIdMsg").style.color = "red";
+			document.getElementById("memberId").value = ""; // 사용자 입력데이터를 공백문자열 초기화
+			return false; // input type ="submit"
+			
+		}
+		memberId = memberId.trim();
+		console.log("memberId : ", memberId.length);
+		
+		
 		// 비밀번호 입력 데이터 가져오기
 		var memberPw = document.joinForm.memberPw.value
 		console.log("memberPw : ", memberPw);
+		
+		if(memberPw == "" || memberPw.trim().length == 0) {
+			document.getElementById("memberPw").focus();
+			document.getElementById("memberPwMsg").innerHTML ="패스워드를 입력하세요";
+			document.getElementById("memberPwMsg").style.color = "red";
+			document.getElementById("memberPw").value = "";
+			return false; // input type ="submit"
+			
+		}
+		memberPw = memberPw.trim();
+		
 		// 비밀번호 확인 입력 데이터 가져오기
 		var memberPwConfirm = document.getElementById("memberPwConfirm").value;
-		console.log("PwConfirm : ", memberPwConfirm);
-	
+		console.log("memberPwConfirm : ", memberPwConfirm);
+
+		if(memberPwConfirm == "" || memberPwConfirm.trim().length == 0) {
+			document.getElementById("memberPwConfirm").focus();
+			document.getElementById("memberPwConfirmMsg").innerHTML ="패스워드를 입력하세요";
+			document.getElementById("memberPwConfirmMsg").style.color = "red";
+			document.getElementById("memberPwConfirm").value = "";
+			return false; // input type ="submit"
+			
+		} 
+		memberPwConfirm = memberPwConfirm.trim();
+		
+		
+		// 비밀번호와 비밀번호 확인 매칭 검증
+		if(memberPw != memberPwConfirm) {
+			document.getElementById("memberPw").focus();
+			document.getElementById("memberPwMsg").innerHTML ="패스워드가 일치하지 않습니다.";
+			document.getElementById("memberPwMsg").style.color = "red";
+			document.getElementById("memberPw").value = "";
+			document.getElementById("memberPwConfirm").value = "";
+			return false; // input type ="submit"
+		}
+		
+		/* 비밀번호 표시 : 보이기 / 감추기 이벤트 
+			1. 비밀번호 표시 체크박스 객체 가져오기
+			2. 비밀번호 객체 가져오기
+			3. 비밀번호 확인 객체 가져오기
+			4. 체크박스 체킹(checked == true)
+				=> type='text'
+			5. 체크박스 해제(checked == false)
+		*/ 
+		function viewMemberPw() {
+			var viewMemberPwElement = document.getElementById("btnViewMemberPw");
+			var memberPwElement = document.getElementById("memberPw");
+			var memberPwConfirmElement = document.getElementById("memberPwConfirm");
+			
+			if(viewMemberPwElement.checked) {
+				memberPwElement.type = "text";
+				memberPwConfirmElement.type = "text";
+			} else {
+				memberPwElement.type = "password";
+				memberPwConfirmElement.type = "password";
+			}
+			
+		}
+		
+		/* 이메일 
+			1. 이메일 항목 전부 입력시 뒷부분 필요없음
+			2. 이메일 뒷부분 선택시
+			3. 앞에 @ ~ 자르고 뒷부분 선택
+			4. 선택한 구문 집어넣기
+			
+		*/	
+		function changeEmail() {
+			var emailElement = document.getElementById("emailChanger");	
+			var email2Element = document.getElementById("input_email2");
+			
+			if(emailElement == "네이버") {
+				email2Element.value = "@naver.com";
+			}
+		}		
+			
 		// 이 부분을 추가하면 action 으로 이동하지 않아서 console 확인 가능	
-		return false;
+		// return false;
 		}
 	
 </script>		
@@ -65,30 +149,40 @@
  -->
  
  <form action="result.html" method="post" name="joinForm" id="joinForm">
+	<!-- 아이디 -->
 	<div class="input_location">	
 	<input type="text" name="memberId" id="memberId"
 	placeholder="아이디" class="input_box">
+	<span id="memberIdMsg"></span>
 	</div>
+	
+	<!-- 비밀번호 -->
 	<div class="input_location">
-	<input type="password" name="memberPw" id="memberPw"
-	placeholder="비밀번호" class="input_box">
+	<input type="password" name="memberPw" id="memberPw" placeholder="비밀번호" class="input_box">
+	<span id="memberPwMsg"></span>
 	</div>
+	
+	<!-- 비밀번호 확인 -->
 	<div class="input_location">
 	<input type="password" name="memberPwConfirm" id="memberPwConfirm"
 	placeholder="비밀번호 확인" class="input_box">
+	<span id="memberPwConfirmMsg"></span>
+	
+	<!-- 비밀번호 보이기 -->
+	<input type="checkbox" name="btnViewMemberPw"  id="btnViewMemberPw"	onclick="viewMemberPw()"> 비밀번호 보이기
 	</div>
+	
+
+	
 	<div class="input_location">
-	<input type="checkbox" name="showMemberPw"> 비밀번호 보이기
-	</div>
-	<div class="input_location">
-	<input type="text" name="email1"
-	placeholder="이메일" class="input_email">@
-	<input type="text" name="email2"
-	placeholder="도메인주소" class="input_email">
-	<select name="mail">
+	<input type="text" name="email1" id="input_email1"
+	placeholder="이메일" class="input_email1" >
+	<input type="text" name="email2" id="input_email2"
+	placeholder="도메인주소" class="input_email2" >
+	<select name="emailChanger" id="emailChanger" onchange = "changeEmail()">
     <option value="">직접입력</option>
-    <option value="naver">naver.com</option>
-    <option value="gmail">gmail.com</option>
+    <option value="@naver.com" id="naver">naver</option>
+    <option value="@gmail.com" id="gmail">gmail</option>
 	</select>
 	</div>
 	<div class="input_location">
