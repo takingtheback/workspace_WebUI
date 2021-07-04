@@ -25,11 +25,7 @@
 			
 			return false; 
 		}
-		
-		
-		
-		
-	}
+    }
     </script>
 </head>
     
@@ -41,12 +37,14 @@
             <div class="int-area">
             <input type="password" name="memberPw" id="memberPw"
                    placeholder=" 새 비밀번호 " autocomplete="off" required>
-               
+                   
+          
+            <h4 id="CapsLockCheck">Caps Lock 켜짐</h4> 
             </div>
             <div class="int-area">
              <input type="password" name="memberPwConfirm" id="memberPwConfirm"
-                   placeholder=" 비밀번호 재입력 " autocomplete="off" required
-                   onblur="checkMappingMemberPw()">
+                    placeholder=" 비밀번호 재입력 " autocomplete="off" required>
+                    
                
             </div>
             <div class="btn-area">
@@ -54,6 +52,24 @@
             </div>
             </form>
             
+            <script type="text/javascript">
+        	// Get the input field
+        	var input = document.getElementById("memberPw");
+
+        	// Get the warning text
+        	var text = document.getElementById("CapsLockCheck");
+
+        	// When the user presses any key on the keyboard, run the function
+        	input.addEventListener("keyup", function(event) {
+
+        	  // If "caps lock" is pressed, display the warning text
+        	  if (event.getModifierState("CapsLock")) {
+        	    text.style.display = "block";
+        	  } else {
+        	    text.style.display = "none"
+        	  }
+        	});
+        	</script>
         </section>
 </body>
 </html>

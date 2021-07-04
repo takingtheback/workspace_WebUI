@@ -53,7 +53,13 @@ body::before {
     width:400px; position: relative;
     margin-top: 20px;
 }
-
+.int-area h4 {
+    position: relative;
+    position: absolute; z-index: 2;
+    top:10; right: 0;bottom: 0; left:50;
+    font-size:18px; color: #6495ED;
+   
+ }
 .int-area input{
     width:100%;
     padding: 20px 10px 10px;
