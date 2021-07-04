@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url("file:///C:/00.practice/workspace_webui/003.miniproject_day1/src/main/webapp/img/cloud.jpg") no-repeat center;
+    background: url("https://raw.githubusercontent.com/PD-team2/TodayMusic/JHKim/TodayMusic/src/main/webapp/img/girl.jpg") no-repeat center;
     background-size: cover;
     
 }
