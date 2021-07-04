@@ -4,13 +4,24 @@
 /* form 양식 css : css/css_JHK.css */
 
 * {margin: 0; padding: 0; box-sizing: border-box}
-body {
-   font-family: 'Noto Sans KR', sans-serif;
+.login-Page {
+    font-family: 'Noto Sans KR', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background: url("https://raw.githubusercontent.com/PD-team2/TodayMusic/JHKim/TodayMusic/src/main/webapp/img/girl.jpg") no-repeat center;
+    background-size: cover;
+    
+}
+
+.findPw-Page {
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("https://raw.githubusercontent.com/takingtheback/workspace_webui/main/003.miniproject_day1/src/main/webapp/img/cloud.jpg") no-repeat center;
     background-size: cover;
     
 }
@@ -35,7 +46,7 @@ body::before {
 }
 
 .findMemberPw-form h3 {
-    font-size: 16px; color: #fff;
+    font-size: 16px; color: #6495ED;
     text-align: center;
 }
 .int-area {
