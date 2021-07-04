@@ -13,15 +13,18 @@
 	// 메세지 출력객체 가져오기 및 변경
 	var emailMsgElement = document.getElementById("emailMsg");
 	emailMsgElement.innerHTML = parentEmailElement.value;
-
+	
 	// 부모창의 인증번호 객체 가져오기
-	var parentTempNumElement = document.getElementById("childTempNum");
-	console.log("childTempNum : ", parentTempNumElement.value);
+	var parentEmailElement = window.opener.document.getElementById("parentTempNum");
+
+	var childTempNumElement = document.getElementById("childTempNum");
 	
-	
+	childTempNumElement.innerHTML = parentEmailElement.value;
 	
 	
 	}
+	
+	
 </script>	
 </head>
     
@@ -29,7 +32,7 @@
  <section class="findMemberPw-form">
         <h1>인증메일발송</h1>
         <h3 id="emailMsg">message</h3>
-       	<div id="childTempNum"></div>
+       	<h4 id="childTempNum"></h4>
         <form action="inputMemberPw.html" method="post">
             <div class="int-area">
             <input type="text" name="tempNumConfirm" id="tempNumConfirm"
