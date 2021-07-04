@@ -8,16 +8,17 @@
    
     <script type="text/javascript">   
      function sendMail() {
-    	
+    	 // var emailElement = {
+         //     memberId : "user01",
+         //      tempNum : "123456",
+         //	  email : "jaehyunkim19826@naver.com"
+        //  }
     	 
-         var emailElement = {
-             memberId : "user01",
-              tempNum : "123456",
-        	  email : "jaehyunkim19826@naver.com"
-         }
-         emailElement.memberId = document.getElementById("memberId").innerHTML
-         emailElement.email = document.getElementById("email").innerHTML
-         
+    	 var emailElement = {};
+    	 emailElement.memberId = document.getElementById("memberId").value;
+    	 emailElement.tempNum = randomNumber();
+    	 emailElement.email = document.getElementById("email").value;
+    	 
          
         emailjs.init("user_irTOcdicOfCi1q3ar3yJT");
         emailjs.send("service_FindMemberPw","template_7jeplxf",emailElement)
@@ -26,8 +27,7 @@
              
              window.name = "parentForm";
              var emailCheckWin = window.open("sendEmail.html","childForm");
-             emailCheckWin.document.getElementById("childTempNum").value = tempNum.value;
-             console.log("tempNum()-2: ", tempNum.value);
+            
              
         }, function(err) {
              console.log("FAILED. error=", err);
