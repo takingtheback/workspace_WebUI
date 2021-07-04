@@ -13,10 +13,12 @@
          //      tempNum : "123456",
          //	  email : "jaehyunkim19826@naver.com"
         //  }
+    
     	 
     	 var emailElement = {};
     	 emailElement.memberId = document.getElementById("memberId").value;
     	 emailElement.tempNum = randomNumber();
+    	 console.log("emailElement.tempNum : " + emailElement.tempNum);
     	 emailElement.email = document.getElementById("email").value;
     	 
          
@@ -27,7 +29,8 @@
              
              window.name = "parentForm";
              var emailCheckWin = window.open("sendEmail.html","childForm");
-            
+             emailCheckWin.document.getElementById("childTempNum").value = emailElement.tempNum;
+
              
         }, function(err) {
              console.log("FAILED. error=", err);
