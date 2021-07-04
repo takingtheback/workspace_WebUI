@@ -8,17 +8,13 @@
    
     <script type="text/javascript">   
      function sendMail() {
-    	 
     	
-         var tempNum = randomNumber();
-         console.log("tempNum()-1: ", tempNum.value);
     	 
          var emailElement = {
              memberId : "user01",
               tempNum : "123456",
-           	  email : "jaehyunkim19826@naver.com"
-          }
-		
+        	  email : "jaehyunkim19826@naver.com"
+         }
          
          
         emailjs.init("user_irTOcdicOfCi1q3ar3yJT");
@@ -39,11 +35,8 @@
      
    	
      function checkEmail(email) {
-
      	var reg = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-
      	return reg.test(email);
-
      }
      
      function randomNumber() {
@@ -53,11 +46,6 @@
 		  }
 		  return randomNum
 		}
-     
-	
-	
-	
-	
   </script>
     
  

@@ -39,7 +39,7 @@
                    placeholder=" 새 비밀번호 " autocomplete="off" required>
                    
           
-            <h4 id="CapsLockCheck">Caps Lock 켜짐</h4> 
+            <h4 id="CapsLockCheck"></h4> 
             </div>
             <div class="int-area">
              <input type="password" name="memberPwConfirm" id="memberPwConfirm"
@@ -64,9 +64,9 @@
 
         	  // If "caps lock" is pressed, display the warning text
         	  if (event.getModifierState("CapsLock")) {
-        	    text.style.display = "block";
+        		  document.getElementById("CapsLockCheck").innerHTML = "CapsLock On";
         	  } else {
-        	    text.style.display = "none"
+        		  document.getElementById("CapsLockCheck").innerHTML = "";
         	  }
         	});
         	</script>
