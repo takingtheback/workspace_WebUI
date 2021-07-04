@@ -7,23 +7,30 @@
 <script type="text/javascript">
 	/* 윈도우 로드 이벤트 */
 	window.onload = function() {
-	// 부모창의 아이디객체 가져오기
+	// 부모창의 이메일객체 가져오기
 	var parentEmailElement = window.opener.document.getElementById("email");
-	console.log("E-mail : ", window.opener.document.getElementById("email"));
-	// 메세지 출력객체 가져오기
+	
+	// 메세지 출력객체 가져오기 및 변경
 	var emailMsgElement = document.getElementById("emailMsg");
 	emailMsgElement.innerHTML = parentEmailElement.value;
 
+	// 부모창의 인증번호 객체 가져오기
+	var parentTempNumElement = document.getElementById("childTempNum");
+	console.log("childTempNum : ", parentTempNumElement.value);
+	
+	
+	
+	
 	}
 </script>	
 </head>
     
-<body>
+<body class="findPw-Page">
  <section class="findMemberPw-form">
         <h1>인증메일발송</h1>
         <h3 id="emailMsg">메세지출력영역</h3>
-       	
-        <form action="inputMemberPw" method="post">
+       	<div id="childTempNum"></div>
+        <form action="inputMemberPw.html" method="post">
             <div class="int-area">
             <input type="text" name="tempNumConfirm" id="tempNumConfirm"
                    placeholder=" 인증번호" autocomplete="off" required>

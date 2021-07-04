@@ -4,25 +4,53 @@
     <meta charset="UTF-8">
     <title>비밀번호찾기|오늘뭐듣지?</title>
     <link type="text/css" rel="stylesheet" href="css/css_JHK.css">
-    <script src="js_logIn_JHK.js"></script>
+    <script type="text/javascript">
+    window.onload = function() {
+		initForm();
+	}
+	
+	/* 폼 초기화 함수 */
+	function initForm() {
+		document.getElementById("memberPw").focus();
+	}
+	
+	function checkForm() {
+		var memberPw = document.getElementById("memberPw").value;
+		var memberPwConfirm = document.getElementById("memberPwConfirm").value;
+		
+		// 비밀번호와 비밀번호확인 매칭 검증
+		if (memberPw != memberPwConfirm) {
+			document.getElementById("memberPw").focus();
+			document.getElementById("memberPwMsg").innerHTML = "입력하신 두 비밀번호가 일치하지 않습니다.";
+			
+			return false; 
+		}
+		
+		
+		
+		
+	}
+    </script>
 </head>
     
-<body>
+<body class="findPw-Page">
  <section class="findMemberPw-form">
         <h1>새비밀번호입력</h1>
-        <form action="">
+        <h3 id="memberPwMsg"></h3>
+        <form action="InputMemberPwResult.html" method="post">
             <div class="int-area">
-            <input type="text" name="newMemberPw" id="newMemberPw"
+            <input type="password" name="memberPw" id="memberPw"
                    placeholder=" 새 비밀번호 " autocomplete="off" required>
                
             </div>
             <div class="int-area">
-             <input type="text" name="newMemberPwConfirm" id="newMemberPwConfirm"
-                   placeholder=" 비밀번호 재입력 " autocomplete="off" required>
+             <input type="password" name="memberPwConfirm" id="memberPwConfirm"
+                   placeholder=" 비밀번호 재입력 " autocomplete="off" required
+                   onblur="checkMappingMemberPw()">
                
             </div>
             <div class="btn-area">
-            <button type="submit">확인</button>
+            <button type="submit" onclick="return checkForm();">확인</button>
             </div>
             </form>
             

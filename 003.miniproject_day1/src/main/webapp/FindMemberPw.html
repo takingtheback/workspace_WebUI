@@ -8,7 +8,11 @@
    
     <script type="text/javascript">   
      function sendMail() {
-
+    	 
+    	
+         var tempNum = randomNumber();
+         console.log("tempNum()-1: ", tempNum.value);
+    	 
          var emailElement = {
              memberId : "user01",
               tempNum : "123456",
@@ -24,10 +28,9 @@
              
              window.name = "parentForm";
              var emailCheckWin = window.open("sendEmail.html","childForm");
-             emailCheckWin.document.getElementById("email").value = document.getElementById("email").value;
-
-             출처: https://all-record.tistory.com/149 [세상의 모든 기록]
-             console.log("tempNum(): ", tempNum());
+             emailCheckWin.document.getElementById("childTempNum").value = tempNum.value;
+             console.log("tempNum()-2: ", tempNum.value);
+             
         }, function(err) {
              console.log("FAILED. error=", err);
              alert("FAILED");
@@ -43,14 +46,14 @@
 
      }
      
-     function tempNum() {
-		  let str = ''
+     function randomNumber() {
+		  let randomNum = ''
 		  for (let i = 0; i < 6 ; i++) {
-		    str += Math.floor(Math.random() * 10)
+			  randomNum += Math.floor(Math.random() * 10);
 		  }
-		  return str
+		  return randomNum
 		}
-	console.log("tempNum(): ", tempNum());
+     
 	
 	
 	
@@ -60,7 +63,7 @@
  
 </head>
     
-<body>
+<body class="findPw-Page">
  <section class="findMemberPw-form">
         <h1>비밀번호찾기</h1>
         <form action="#" method="post">
@@ -70,11 +73,12 @@
                
             </div>
             <div class="int-area">
-             <input type="text" name="email" id="email"
+            <input type="text" name="email" id="email"
                    placeholder=" E-mail" autocomplete="off" required>
             </div>
             <div class="btn-area">
-            <button type="button" onclick="sendMail();tempNum();">확인</button>
+            
+            <button type="button" onclick="sendMail();">확인</button>
             </div>
             </form>
           
