@@ -9,13 +9,11 @@
 	window.onload = function() {
 	// 부모창의 아이디객체 가져오기
 	var parentEmailElement = window.opener.document.getElementById("email");
-	console.log("E-mail : ", document.getElementById("email"));
+	console.log("E-mail : ", window.opener.document.getElementById("email"));
 	// 메세지 출력객체 가져오기
 	var emailMsgElement = document.getElementById("emailMsg");
 	emailMsgElement.innerHTML = parentEmailElement.value;
-	
-	
-	
+
 	}
 </script>	
 </head>
@@ -23,14 +21,15 @@
 <body>
  <section class="findMemberPw-form">
         <h1>인증메일발송</h1>
-        <div id="emailMsg">메세지출력영역</div>
-        <form action="" method="post">
+        <h3 id="emailMsg">메세지출력영역</h3>
+       	
+        <form action="inputMemberPw" method="post">
             <div class="int-area">
-            <input type="text" name="tempNum" id="tempNum"
+            <input type="text" name="tempNumConfirm" id="tempNumConfirm"
                    placeholder=" 인증번호" autocomplete="off" required>
             </div>
             <div class="btn-area">
-            <button type="submit">확인</button>
+            <button type="submit" onclick= "checkNum()">확인</button>
             </div>
             <div class="caption">
             <a href="cancel">취소</a>

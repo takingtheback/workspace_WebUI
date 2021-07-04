@@ -21,8 +21,12 @@
         emailjs.send("service_FindMemberPw","template_7jeplxf",emailElement)
         .then(function(response) {
              console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-             var emailCheckWin = window.open("sendEmail.html","FindMemberPw");
-             console.log("E-mail : ", document.getElementById("email"));
+             
+             window.name = "parentForm";
+             var emailCheckWin = window.open("sendEmail.html","childForm");
+             emailCheckWin.document.getElementById("email").value = document.getElementById("email").value;
+
+             출처: https://all-record.tistory.com/149 [세상의 모든 기록]
              console.log("tempNum(): ", tempNum());
         }, function(err) {
              console.log("FAILED. error=", err);
@@ -47,6 +51,10 @@
 		  return str
 		}
 	console.log("tempNum(): ", tempNum());
+	
+	
+	
+	
   </script>
     
  
@@ -66,9 +74,7 @@
                    placeholder=" E-mail" autocomplete="off" required>
             </div>
             <div class="btn-area">
-            <input type="hidden" name="tempNum" id="tempNum" value="tempNum()">
-             
-            <button type="button" onclick="sendMail()">확인</button>
+            <button type="button" onclick="sendMail();tempNum();">확인</button>
             </div>
             </form>
           
