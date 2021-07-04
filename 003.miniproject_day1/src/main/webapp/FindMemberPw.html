@@ -7,11 +7,11 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
    
     <script type="text/javascript">   
-     (function sendMail() {
+     function sendMail() {
 
          var emailElement = {
              memberId : "user01",
-              tempNum : "753698",
+              tempNum : "123456",
            	  email : "jaehyunkim19826@naver.com"
           }
 		
@@ -21,10 +21,23 @@
         emailjs.send("service_FindMemberPw","template_7jeplxf",emailElement)
         .then(function(response) {
              console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-          }, function(err) {
+             var emailCheckWin = window.open("sendEmail.html","FindMemberPw");
+             console.log("E-mail : ", document.getElementById("email"));
+             console.log("tempNum(): ", tempNum());
+        }, function(err) {
              console.log("FAILED. error=", err);
+             alert("FAILED");
           });
-     })();
+     };
+     
+   	
+     function checkEmail(email) {
+
+     	var reg = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+     	return reg.test(email);
+
+     }
      
      function tempNum() {
 		  let str = ''
@@ -55,7 +68,7 @@
             <div class="btn-area">
             <input type="hidden" name="tempNum" id="tempNum" value="tempNum()">
              
-            <button type="submit" value="sendMail()">확인</button>
+            <button type="button" onclick="sendMail()">확인</button>
             </div>
             </form>
           

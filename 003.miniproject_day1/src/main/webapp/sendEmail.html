@@ -5,7 +5,18 @@
 <title>비밀번호찾기|오늘뭐듣지?</title>
 <link type="text/css" rel="stylesheet" href="css/css_JHK.css">
 <script type="text/javascript">
+	/* 윈도우 로드 이벤트 */
+	window.onload = function() {
+	// 부모창의 아이디객체 가져오기
+	var parentEmailElement = window.opener.document.getElementById("email");
+	console.log("E-mail : ", document.getElementById("email"));
+	// 메세지 출력객체 가져오기
+	var emailMsgElement = document.getElementById("emailMsg");
+	emailMsgElement.innerHTML = parentEmailElement.value;
 	
+	
+	
+	}
 </script>	
 </head>
     
