@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 	<head>
+		<meta charset="UTF-8">
+		<meta name="google-signin-scope" content="profile email">
+	    <meta name="google-signin-client_id" content="587228537477-al3mpkia2s5f4626098alb5h90ugquuq.apps.googleusercontent.com">
 	    <script src="https://apis.google.com/js/platform.js" async defer></script>  
         
 		<title>로그인 | 오늘뭐듣지?</title>
@@ -66,7 +69,7 @@
             
             <!-- 아이디 비밀번호찾기 --> 
             <div class="caption">
-            <a href="#"> 아이디</a>
+            <a href="FindMemberId.html"> 아이디</a>
             <span class="span1">/ </span>    
             <span class="span1">
             <a href="FindMemberPw.html">비밀번호 찾기</a></span>    
@@ -79,7 +82,11 @@
 			</a>
 			</div>
              
-           
+            <!-- 구글 로그인 -->
+            <div class="caption" data-longtitle="true" data-onsuccess="onSignIn" data-theme="dark">
+           	<a id="custom-login-btn2" href="javascript:onSignIn()">
+           	<img src="img/btn_google_signin_light_normal_web@2x.png" width="350" height="52.5"/>
+           	</div>
         </section>
 		
 <!-- 
@@ -103,7 +110,20 @@ function loginWithKakao() {
 }
 
 
+function onSignIn(googleUser) {
+    // Useful data for your client-side scripts:
+    var profile = googleUser.getBasicProfile();
+    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+    console.log('Full Name: ' + profile.getName());
+    console.log('Given Name: ' + profile.getGivenName());
+    console.log('Family Name: ' + profile.getFamilyName());
+    console.log("Image URL: " + profile.getImageUrl());
+    console.log("Email: " + profile.getEmail());
 
+    // The ID token you need to pass to your backend:
+    var id_token = googleUser.getAuthResponse().id_token;
+    console.log("ID Token: " + id_token);
+  }  
 </script>
 	 
 	</body>
