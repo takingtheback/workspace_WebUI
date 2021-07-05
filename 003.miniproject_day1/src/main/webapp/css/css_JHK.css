@@ -83,7 +83,7 @@ body::before {
 }
 
 .caption {
-    margin-top: 20px;
+    margin-top: 15px;
     text-align: center;
 }
 .caption a {
@@ -91,6 +91,13 @@ body::before {
     text-decoration: none;
 }
 
+.g-signin2{
+  width: 100%;
+}
+
+.g-signin2 > div{
+  margin: 0 auto;
+}
 .span1 {
     position: relative;
     top: 0px;
