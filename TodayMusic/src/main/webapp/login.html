@@ -2,10 +2,8 @@
 <html lang="ko">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="google-signin-scope" content="profile email">
-	    <meta name="google-signin-client_id" content="587228537477-al3mpkia2s5f4626098alb5h90ugquuq.apps.googleusercontent.com">
-	    <script src="https://apis.google.com/js/platform.js" async defer></script>  
-        
+		<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+  		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<title>로그인|오늘뭐듣지?</title>
 		
         <!-- css : external : css_JHK.css -->
@@ -32,13 +30,13 @@
 	    	location.href="index.html"; }
 
         </script>
-	   
+	
 	</head>
 	
 	<body class="login-Page">
         <section class="login-form">
         <h1>오늘은 뭐 듣지?</h1>
-        <form action="index_JHK.html" method="post">
+        <form action="index.html" method="post">
             
             <!-- 아이디 -->
             <div class="int-area">
@@ -61,15 +59,10 @@
             <button type="submit">LOGIN</button>
             </div>
             </form>
-            
-            <!-- 회원가입 --> 
-            <div class="caption">
-            <a href="#">회원가입</a>
-            </div>
-            
+                                  
             <!-- 아이디 비밀번호찾기 --> 
             <div class="caption">
-            <a href="FindMemberId.html"> 아이디</a>
+            <a href="findId.html"> 아이디</a>
             <span class="span1">/ </span>    
             <span class="span1">
             <a href="FindMemberPw.html">비밀번호 찾기</a></span>    
@@ -78,17 +71,15 @@
             <!--  카카오 로그인 --> 
             <div class="caption">
             <a id="custom-login-btn" href="javascript:loginWithKakao()">
-			<img src="img/kakao_login_medium_wide.png" width="350"/>
+			<img src="img/kakao_login_medium_wide.png" height="50" width="231.25"/>
 			</a>
 			</div>
              
-            <!-- 구글 로그인 -->
-            <div class="caption">
-            <div class="g-signin2" data-width="350" data-height="52.5" data-longtitle="true" data-success="onSignIn"></div>
-            </div>
-           
-            
-           
+          	 <!-- 네이버아이디로로그인 버튼 노출 영역 -->
+			 <div class="caption">
+			 <div id="naver_id_login"></div>
+			 </div>
+			  
         </section>
 		
 		    
@@ -110,22 +101,15 @@
 		  })
 		}
 		
-		/* 구글 로그인 */
-		function onSignIn(googleUser) {
-		    // Useful data for your client-side scripts:
-		    var profile = googleUser.getBasicProfile();
-		    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-		    console.log('Full Name: ' + profile.getName());
-		    console.log('Given Name: ' + profile.getGivenName());
-		    console.log('Family Name: ' + profile.getFamilyName());
-		    console.log("Image URL: " + profile.getImageUrl());
-		    console.log("Email: " + profile.getEmail());
-		    
-		    location.replace("index.html"); 
-		    // The ID token you need to pass to your backend:
-		    var id_token = googleUser.getAuthResponse().id_token;
-		    console.log("ID Token: " + id_token);
-		  }  
+		//네이버아이디로로그인 버튼 노출 영역 
+		var naver_id_login = new naver_id_login("4OrGPymIJCOVn1IXxbqY", "http://localhost:8070/TodayMusic/index.html");
+	  	var state = naver_id_login.getUniqState();
+	  	naver_id_login.setButton("green", 3,50);
+	  	naver_id_login.setDomain("YOUR_SERVICE_URL");
+	  	naver_id_login.setState(state);
+	  	// naver_id_login.setPopup();
+	  	naver_id_login.init_naver_id_login();
+		
 		</script>
 	 
 	</body>
